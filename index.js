@@ -92,6 +92,14 @@ app.post("/bankAccount", (req, res) => {
 });
 //--------Bank Information Route End----------
 
+//--------Check API Validity----------
+
+app.get("/checkValid", (req, res) => {
+  const storedData = readStorage();
+  // console.log("storedData: ", storedData);
+  res.status(200).send({ data: storedData });
+});
+
 const PORT = 3300; // Define the port
 
 app.listen(PORT, () => {
